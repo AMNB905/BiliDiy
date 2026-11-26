@@ -7,7 +7,7 @@
     android:layout_margin="6dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="16dp"
     app:rippleColor="@color/pinkLight">
 
     <LinearLayout
@@ -77,3 +77,4 @@
             android:textSize="11sp" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
+

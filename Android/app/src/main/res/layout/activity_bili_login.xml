@@ -20,8 +20,8 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
             style="@style/Widget.BiliDiy.IconButton.Ghost"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:contentDescription="返回"
             app:icon="@drawable/ic_arrow_back"
             app:iconSize="22dp" />
@@ -81,3 +81,4 @@
         android:textColor="@color/textSecondary"
         android:textSize="11sp" />
 </LinearLayout>
+

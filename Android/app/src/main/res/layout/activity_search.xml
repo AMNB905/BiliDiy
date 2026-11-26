@@ -19,8 +19,8 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
             style="@style/Widget.BiliDiy.IconButton.Ghost"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:contentDescription="返回"
             app:icon="@drawable/ic_arrow_back"
             app:iconSize="22dp" />
@@ -94,8 +94,8 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSearch"
                 style="@style/Widget.BiliDiy.IconButton"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="2dp"
                 android:contentDescription="@string/search"
                 app:icon="@drawable/ic_search"
@@ -131,19 +131,13 @@
                     style="@style/Widget.BiliDiy.Card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="24dp">
+                    app:cardCornerRadius="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="RECENT"
-                            android:textAppearance="@style/TextAppearance.BiliDiy.Overline" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -157,8 +151,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="搜索历史"
-                                android:textAppearance="@style/TextAppearance.BiliDiy.Headline"
-                                android:textSize="20sp" />
+                                android:textAppearance="@style/TextAppearance.BiliDiy.TitleLarge" />
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btnHistoryClear"
@@ -196,19 +189,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    app:cardCornerRadius="24dp">
+                    app:cardCornerRadius="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="TRENDING"
-                            android:textAppearance="@style/TextAppearance.BiliDiy.Overline" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -222,21 +209,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="B 站热搜"
-                                android:textAppearance="@style/TextAppearance.BiliDiy.Headline"
-                                android:textSize="20sp" />
+                                android:textAppearance="@style/TextAppearance.BiliDiy.TitleLarge" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="26dp"
-                                android:background="@drawable/bg_chip_on"
-                                android:gravity="center"
-                                android:paddingStart="10dp"
-                                android:paddingEnd="10dp"
-                                android:text="实时"
-                                android:textColor="@color/pinkDeep"
-                                android:textSize="10sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+                            </LinearLayout>
 
                         <com.google.android.material.chip.ChipGroup
                             android:id="@+id/chipHot"
@@ -264,19 +239,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    app:cardCornerRadius="24dp">
+                    app:cardCornerRadius="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="CHARTS"
-                            android:textAppearance="@style/TextAppearance.BiliDiy.Overline" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -291,21 +260,9 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="全站排行榜"
-                                android:textAppearance="@style/TextAppearance.BiliDiy.Headline"
-                                android:textSize="20sp" />
+                                android:textAppearance="@style/TextAppearance.BiliDiy.TitleLarge" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="26dp"
-                                android:background="@drawable/bg_chip_on"
-                                android:gravity="center"
-                                android:paddingStart="9dp"
-                                android:paddingEnd="9dp"
-                                android:text="TOP 10"
-                                android:textColor="@color/pinkDeep"
-                                android:textSize="9sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+                            </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/listRanking"
@@ -375,3 +332,6 @@
         </LinearLayout>
     </FrameLayout>
 </LinearLayout>
+
+
+

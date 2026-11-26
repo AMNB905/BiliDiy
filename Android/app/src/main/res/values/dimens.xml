@@ -14,11 +14,13 @@
     <dimen name="radius_sm">12dp</dimen>
     <dimen name="radius_md">16dp</dimen>
     <dimen name="radius_lg">20dp</dimen>
-    <dimen name="radius_xl">24dp</dimen>
+    <dimen name="radius_xl">28dp</dimen>
     <dimen name="radius_pill">999dp</dimen>
 
     <dimen name="touch_target">48dp</dimen>
-    <dimen name="icon_button">40dp</dimen>
+    <dimen name="icon_button">44dp</dimen>
     <dimen name="card_stroke">1dp</dimen>
-    <dimen name="bottom_nav_height">80dp</dimen>
+    <dimen name="bottom_nav_height">64dp</dimen>
+    <dimen name="top_bar_height">56dp</dimen>
+    <dimen name="search_height">52dp</dimen>
 </resources>

@@ -1,26 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Material 3 brand palette · light only, no dark fills -->
-    <color name="pink">#C74671</color>
-    <color name="pinkDeep">#A63D63</color>
-    <color name="peach">#A87A1F</color>
-    <color name="online">#3E8E4C</color>
-    <color name="pinkLight">#FFF0F5</color>
-    <color name="pinkBorder">#F2C0D0</color>
-    <color name="onPink">#FFFFFF</color>
-
-    <color name="bg">#FFFAFC</color>
+    <!-- 粉墨 · 浅色（纸白 + 墨粉）。语义 token 在前，旧名做别名，避免布局大面积改名。 -->
+    <color name="bg">#FDF9F7</color>
     <color name="surface">#FFFFFF</color>
-    <color name="surfaceDeep">#FCF2F5</color>
-    <color name="surfaceContainer">#F9EDF1</color>
-    <color name="surfaceContainerHigh">#F4E5EA</color>
-    <color name="textMain">#3A3235</color>
-    <color name="textSecondary">#7A6A70</color>
-    <color name="line">#F0E0E5</color>
+    <color name="surfaceContainer">#F6EFEC</color>
+    <color name="surfaceContainerHigh">#EFE5E1</color>
+    <color name="line">#E8DCD6</color>
+    <color name="textMain">#241F1D</color>
+    <color name="textSecondary">#6B5D58</color>
+    <color name="primary">#C0265C</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#FBE4EB</color>
+    <color name="onPrimaryContainer">#8A1A44</color>
+    <color name="brandDeco">#FB7299</color>
+    <color name="accent">#FFC53D</color>
+    <color name="ok">#2E7D48</color>
+    <color name="warn">#9A6B10</color>
+    <color name="bad">#C0392B</color>
 
-    <color name="badge">#B34A3A40</color>
+    <!-- 旧名兼容 -->
+    <color name="pink">@color/primary</color>
+    <color name="pinkDeep">@color/onPrimaryContainer</color>
+    <color name="pinkLight">@color/primaryContainer</color>
+    <color name="pinkBorder">#E9C6D2</color>
+    <color name="onPink">@color/onPrimary</color>
+    <color name="surfaceDeep">@color/surfaceContainer</color>
+    <color name="peach">#8A6A12</color>
+    <color name="online">@color/ok</color>
+    <color name="badge">#B3000000</color>
     <color name="backScrim">#66000000</color>
-    <color name="ok">#3E8E4C</color>
-    <color name="warn">#A66B12</color>
-    <color name="bad">#C24A44</color>
 </resources>

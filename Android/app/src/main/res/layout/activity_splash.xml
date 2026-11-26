@@ -16,14 +16,14 @@
 
         <FrameLayout
             android:id="@+id/splashLogo"
-            android:layout_width="104dp"
-            android:layout_height="104dp"
+            android:layout_width="92dp"
+            android:layout_height="92dp"
             android:background="@drawable/bg_splash_logo"
             android:elevation="2dp">
 
             <ImageView
-                android:layout_width="82dp"
-                android:layout_height="82dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:layout_gravity="center"
                 android:contentDescription="@null"
                 android:src="@mipmap/splash_avatar" />
@@ -36,8 +36,8 @@
             android:layout_marginTop="24dp"
             android:letterSpacing="0.01"
             android:text="BiliDiy"
-            android:textColor="@color/pink"
-            android:textSize="30sp"
+            android:textColor="@color/textMain"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
@@ -69,3 +69,4 @@
         android:textColor="@color/textSecondary"
         android:textSize="10sp" />
 </FrameLayout>
+

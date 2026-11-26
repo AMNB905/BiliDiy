@@ -49,8 +49,8 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSheetClose"
             style="@style/Widget.BiliDiy.IconButton.Ghost"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:contentDescription="关闭"
             app:icon="@drawable/ic_close"
             app:iconSize="20dp" />
@@ -64,7 +64,7 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="16dp"
         app:rippleColor="@color/pinkLight">
 
         <LinearLayout
@@ -132,7 +132,7 @@
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="16dp"
         app:rippleColor="@color/pinkBorder">
 
         <LinearLayout
@@ -200,7 +200,7 @@
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="16dp"
         app:rippleColor="@color/pinkLight">
 
         <LinearLayout
@@ -265,7 +265,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:gravity="center"
-        android:text="搜索框固定在顶部 · 首页/功能/本地/我的常驻 · 长按浮岛回顶"
+        android:text="搜索固定在顶部 · 底部四个入口常驻 · 长按底栏回顶"
         android:textColor="@color/textSecondary"
         android:textSize="10sp" />
 </LinearLayout>
+
+
+

@@ -20,8 +20,8 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
             style="@style/Widget.BiliDiy.IconButton.Ghost"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:contentDescription="返回"
             app:icon="@drawable/ic_arrow_back"
             app:iconSize="22dp" />
@@ -454,7 +454,7 @@
                 style="@style/Widget.BiliDiy.Card.Tonal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="24dp">
+                app:cardCornerRadius="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -566,7 +566,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="24dp">
+                app:cardCornerRadius="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -641,7 +641,7 @@
                 style="@style/Widget.BiliDiy.Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="24dp">
+                app:cardCornerRadius="16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -708,3 +708,5 @@
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
+
+

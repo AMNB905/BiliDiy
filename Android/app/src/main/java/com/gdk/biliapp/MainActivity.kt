@@ -39,19 +39,16 @@ class MainActivity : BaseActivity() {
     private var seq = 0
 
     private lateinit var pageRoot: View
-    private lateinit var heroHeader: View
-    private lateinit var heroContent: View
+    private lateinit var appBar: View
+    private lateinit var headerContent: View
     private lateinit var rv: RecyclerView
     private lateinit var pb: ProgressBar
     private lateinit var tvEmpty: TextView
     private lateinit var tvAnnounce: TextView
     private lateinit var btnTop: View
     private lateinit var bottomNav: NavigationBarView
-    private lateinit var navIsland: View
-    private lateinit var navGlow: View
     private var topVisible = false
     private var featureSheet: BottomSheetDialog? = null
-    private var glowAnimator: android.animation.ValueAnimator? = null
 
     private val homeAdapter = HomeAdapter(
         onVideo = { v ->
@@ -80,16 +77,14 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         pageRoot = findViewById(R.id.pageRoot)
-        heroHeader = findViewById(R.id.heroHeader)
-        heroContent = findViewById(R.id.heroContent)
+        appBar = findViewById(R.id.appBar)
+        headerContent = findViewById(R.id.headerContent)
         rv = findViewById(R.id.rvList)
         pb = findViewById(R.id.pbLoading)
         tvEmpty = findViewById(R.id.tvEmpty)
         tvAnnounce = findViewById(R.id.tvAnnounce)
         btnTop = findViewById(R.id.btnTop)
         bottomNav = findViewById(R.id.bottomNav)
-        navIsland = findViewById(R.id.navIsland)
-        navGlow = findViewById(R.id.navGlow)
 
         rv.itemAnimator = DefaultItemAnimator().apply {
             addDuration = 220
@@ -130,7 +125,6 @@ class MainActivity : BaseActivity() {
             Ui.toast(this, "已回到顶部")
             true
         }
-        navIsland.setOnLongClickListener(backToTop)
         bottomNav.setOnLongClickListener(backToTop)
 
         bottomNav.setOnItemSelectedListener { item ->
@@ -188,12 +182,6 @@ class MainActivity : BaseActivity() {
         MemberShare.refresh(this)
         refreshHistory()
         syncCloud(prompts = false)
-        if (glowAnimator?.isPaused == true) glowAnimator?.resume()
-    }
-
-    override fun onPause() {
-        glowAnimator?.pause()
-        super.onPause()
     }
 
     private fun refreshHistory() {
@@ -254,67 +242,35 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    /** 全局沉浸式：系统栏隐藏时仍避开挖孔，键盘弹出时列表整体上移 */
+    /** 全局沉浸式：顶部让出状态栏，底部导航栏吃掉系统导航条；键盘弹出时整体上移 */
     private fun applyInsets() {
-        ViewCompat.setOnApplyWindowInsetsListener(pageRoot) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(pageRoot) { _, insets ->
             val bars = insets.getInsets(
                 WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()
             )
             val ime = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom
-            v.setPadding(0, 0, 0, if (ime > 0) ime else 0)
-            heroContent.setPadding(
+            headerContent.setPadding(
                 Ui.dp(this, 16),
-                Ui.dp(this, 10) + bars.top,
-                Ui.dp(this, 10),
-                Ui.dp(this, 18)
+                Ui.dp(this, 8) + bars.top,
+                Ui.dp(this, 16),
+                Ui.dp(this, 10)
             )
-
-            val base = Ui.dp(this, 12)
-            val navBottom = if (ime > 0) base else bars.bottom + base
-            (navIsland.layoutParams as FrameLayout.LayoutParams).bottomMargin = navBottom
-            (navGlow.layoutParams as FrameLayout.LayoutParams).bottomMargin =
-                max(0, navBottom - Ui.dp(this, 18))
-            bottomNav.setPadding(0, 0, 0, 0)
-
-            val side = Ui.dp(this, 12)
-            rv.setPadding(side, Ui.dp(this, 8), side, navBottom + Ui.dp(this, 92))
-            (btnTop.layoutParams as FrameLayout.LayoutParams).bottomMargin =
-                navBottom + Ui.dp(this, 96)
+            bottomNav.setPadding(0, 0, 0, if (ime > 0) ime else bars.bottom)
             insets
         }
         ViewCompat.requestApplyInsets(pageRoot)
     }
 
-    /** 首页首帧：品牌区轻落；浮岛从第一帧起常驻，不参与隐藏 / 入场 */
+    /** 首页首帧：品牌区轻落一次，之后不再动 */
     private fun playIntro() {
-        heroHeader.alpha = 0f
-        heroHeader.translationY = -Ui.dp(this, 10).toFloat()
-        heroHeader.animate()
+        appBar.alpha = 0f
+        appBar.translationY = -Ui.dp(this, 8).toFloat()
+        appBar.animate()
             .alpha(1f)
             .translationY(0f)
-            .setDuration(420)
+            .setDuration(360)
             .setInterpolator(android.view.animation.DecelerateInterpolator())
             .start()
-
-        navIsland.visibility = View.VISIBLE
-        navIsland.alpha = 1f
-        navIsland.translationY = 0f
-        navIsland.scaleX = 1f
-        navIsland.scaleY = 1f
-        navIsland.bringToFront()
-        navGlow.alpha = 0.5f
-        startGlowPulse()
-    }
-
-    private fun startGlowPulse() {
-        if (glowAnimator != null) return
-        glowAnimator = android.animation.ValueAnimator.ofFloat(0.42f, 0.78f).apply {
-            duration = 2600
-            repeatCount = android.animation.ValueAnimator.INFINITE
-            repeatMode = android.animation.ValueAnimator.REVERSE
-            addUpdateListener { navGlow.alpha = it.animatedValue as Float }
-            start()
-        }
     }
 
     /** 浮岛中央「功能」：用底部面板归纳全站入口 */
@@ -496,8 +452,6 @@ class MainActivity : BaseActivity() {
 
     override fun onDestroy() {
         seq++
-        glowAnimator?.cancel()
-        glowAnimator = null
         featureSheet?.dismiss()
         featureSheet = null
         Cloud.onChanged = null

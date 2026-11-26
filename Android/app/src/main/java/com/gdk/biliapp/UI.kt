@@ -2,6 +2,7 @@ package com.gdk.biliapp
 
 import android.app.Activity
 import android.content.Context
+import android.content.res.Configuration
 import android.graphics.Color
 import android.os.Build
 import android.view.Gravity
@@ -37,7 +38,9 @@ object Ui {
         (v * context.resources.displayMetrics.density).toInt()
 
     /** 应用固定浅色主题，所有页面统一使用深色系统栏图标 */
-    fun isLight(context: Context): Boolean = true
+    fun isLight(context: Context): Boolean =
+        (context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) !=
+            Configuration.UI_MODE_NIGHT_YES
 
     fun stripEm(s: String): String =
         s.replace(Regex("</?em[^>]*>"), "").replace("&quot;", "\"").trim()
