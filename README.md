@@ -43,6 +43,11 @@ apksigner sign --key New_Key_*.pk8 --cert New_Key_*.x509.pem --out BiliDiy-relea
 
 国内构建时 `Android/settings.gradle.kts` 已配置阿里云 Maven 镜像。
 
+## 3.9.42 更新
+
+- 版本号升级到 3.9.42（versionCode 76），界面与更新链路沿用 3.9.40。
+- 用于验证「3.9.40 → GitHub 检查更新 → 后台下载 → 覆盖安装」整条链路。
+
 ## 3.9.40 更新
 
 - **粉墨（Pink Ink）设计系统**：纸白底 + 墨粉主色，删掉粉色渐变 masthead、呼吸光斑与浮岛底栏，改用标准 M3 底栏；深色模式同一套 token 全覆盖。
@@ -51,6 +56,7 @@ apksigner sign --key New_Key_*.pk8 --cert New_Key_*.x509.pem --out BiliDiy-relea
 
 ## 版本
 
-- `versionCode=74` / `versionName=3.9.40`
+- `versionCode=76` / `versionName=3.9.42`
 - `applicationId=com.gdk.biliapp`，minSdk 26 / targetSdk 35
 - 签名证书 SHA-256：`33a8bef95a2c25ef003e49ba27a63fd79e136671d58bb405a80c917db301df9c`
+

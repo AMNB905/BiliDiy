@@ -11,8 +11,8 @@ android {
         applicationId = "com.gdk.biliapp"
         minSdk = 26
         targetSdk = 35
-        versionCode = 74
-        versionName = "3.9.40"
+        versionCode = 76
+        versionName = "3.9.42"
     }
 
     buildTypes {
@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.media3:media3-datasource:1.5.1")
     implementation("androidx.media3:media3-ui:1.5.1")
 }
+
 
 
 
