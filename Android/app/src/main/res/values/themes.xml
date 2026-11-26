@@ -8,8 +8,8 @@
 
         <item name="colorSecondary">@color/peach</item>
         <item name="colorOnSecondary">@color/onPrimary</item>
-        <item name="colorSecondaryContainer">@color/surfaceContainer</item>
-        <item name="colorOnSecondaryContainer">@color/textMain</item>
+        <item name="colorSecondaryContainer">@color/primaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/onPrimaryContainer</item>
         <item name="colorTertiary">@color/ok</item>
         <item name="colorOnTertiary">@color/onPrimary</item>
 
@@ -44,3 +44,4 @@
         <item name="android:windowLightNavigationBar">true</item>
     </style>
 </resources>
+
