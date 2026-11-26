@@ -669,8 +669,8 @@ class SettingsActivity : BaseActivity() {
         tvCheckResult.text = getString(R.string.update_checking)
         tvCheckResult.setTextColor(getColor(R.color.textSecondary))
 
-        Cloud.checkUpdate(this) { msg ->
-            if (isFinishing || isDestroyed) return@checkUpdate
+        GhUpdate.check(this) { msg ->
+            if (isFinishing || isDestroyed) return@check
             btnCheck.isEnabled = true
             btnCheck.text = "检查更新"
             tvCheckResult.text = msg
@@ -689,3 +689,5 @@ class SettingsActivity : BaseActivity() {
         "?"
     }
 }
+
+

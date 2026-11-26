@@ -307,24 +307,25 @@ object Cloud {
         "?"
     }
 
-    private fun showUpdate(activity: Activity) {
+    /** 更新弹窗；默认用云端配置里的 upd，GitHub 检查会传入自己的结果 */
+    fun showUpdate(activity: Activity, u: Upd = upd) {
         val msg = buildString {
-            if (upd.name.isNotBlank()) append("新版本 v${upd.name}\n\n")
-            if (upd.log.isNotBlank()) append(upd.log)
-            if (upd.url.isBlank()) append("\n\n（下载地址尚未配置）")
+            if (u.name.isNotBlank()) append("新版本 v${u.name}\n\n")
+            if (u.log.isNotBlank()) append(u.log)
+            if (u.url.isBlank()) append("\n\n（下载地址尚未配置）")
             else append("\n\n将转入后台下载并安装，退出 App 也会继续；下载完成后点通知即可安装。")
         }.trim()
 
         val b = AlertDialog.Builder(activity)
-            .setTitle(if (upd.force) "必须更新" else "发现新版本")
+            .setTitle(if (u.force) "必须更新" else "发现新版本")
             .setMessage(msg)
-            .setCancelable(!upd.force)
+            .setCancelable(!u.force)
             .setPositiveButton("立即更新") { _, _ ->
-                AppUpdater.request(activity, upd)
+                AppUpdater.request(activity, u)
             }
-        if (!upd.force) {
+        if (!u.force) {
             b.setNegativeButton("稍后") { _, _ ->
-                prefs(activity).edit().putInt("skip_ver", upd.code).apply()
+                prefs(activity).edit().putInt("skip_ver", u.code).apply()
             }
         }
         b.show()

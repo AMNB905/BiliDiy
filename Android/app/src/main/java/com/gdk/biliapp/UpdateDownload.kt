@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
@@ -51,6 +52,9 @@ object UpdateDownload {
             setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOWNLOADS, fileName)
             setAllowedOverMetered(true)
             setAllowedOverRoaming(false)
+            // GitHub 资产 API 需要显式 Accept，302 到 release-assets 后系统会自行跟随
+            addRequestHeader("Accept", "application/octet-stream")
+            addRequestHeader("User-Agent", "BiliDiy")
         }
         val id = dm.enqueue(request)
         context.getSharedPreferences(PREF, Context.MODE_PRIVATE).edit()
@@ -102,6 +106,10 @@ object UpdateDownload {
             fail(context, info, "更新包包名异常")
             return false
         }
+        if (!sameSignature(context, file)) {
+            fail(context, info, "更新包签名与当前安装包不一致")
+            return false
+        }
         val newCode = if (Build.VERSION.SDK_INT >= 28) {
             archive.longVersionCode
         } else {
@@ -120,6 +128,21 @@ object UpdateDownload {
         UpdateBus.update(UpdateBus.State(info.code, false, 100, "下载完成，点击通知安装", file.name))
         notifyInstall(context, info, file)
         return true
+    }
+
+    /** 更新包必须与当前安装包同一签名，避免装到改包 */
+    @Suppress("DEPRECATION")
+    private fun sameSignature(context: Context, file: File): Boolean {
+        val pm = context.packageManager
+        val current = runCatching {
+            pm.getPackageInfo(context.packageName, PackageManager.GET_SIGNATURES)
+                .signatures?.firstOrNull()?.toByteArray()
+        }.getOrNull()
+        val archive = runCatching {
+            pm.getPackageArchiveInfo(file.absolutePath, PackageManager.GET_SIGNATURES)
+                ?.signatures?.firstOrNull()?.toByteArray()
+        }.getOrNull()
+        return current != null && archive != null && current.contentEquals(archive)
     }
 
     private fun fail(context: Context, info: Info, message: String) {

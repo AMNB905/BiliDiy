@@ -285,7 +285,7 @@ bilibili-app/
 
 - 接口：`https://xiaorou.top/BILILI/api.php`（key 编译在 `Cloud.kt`）
 - 后台：`https://xiaorou.top/BILILI/admin.php`（公告 / 更新 / Cookie / 锁定 / 设备账户 / 改密 / 传 APK）
-- 部署与凭据见 `docs/云端部署说明.md`；后端源码在 `server/`
+- 部署与凭据见 `docs/云端部署说明.md`；后端源码已移出本仓库（单独保存）
 - 服务端未部署时 App 仍可用：保留上次缓存，首次安装则以未登录状态运行
 
 ## v3.9.30 相比 v3.9.12 的变化
@@ -401,6 +401,7 @@ bilibili-app/
 - 影视「付费」单片（非大会员权益）只能播放试看片段，完整版需在 B 站购买，App 会提示
 - 部分影视条目受地区/版权限制，接口直接无剧集或播放失败
 - `bili_ticket`（Cookie 内的风控参数）会过期；过期后搜索会走未签名降级接口，可能触发风控
+
 
 
 

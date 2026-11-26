@@ -226,7 +226,7 @@ class MainActivity : BaseActivity() {
             refreshCloudUi()
             if (Cloud.gate(this)) return@refresh
             if (prompts) {
-                Cloud.maybeUpdate(this)
+                GhUpdate.maybePrompt(this)
                 Cloud.showAnnouncement(this)
             }
         }
@@ -459,3 +459,4 @@ class MainActivity : BaseActivity() {
         super.onDestroy()
     }
 }
+
