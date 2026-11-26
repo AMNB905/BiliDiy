@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="5dp"
-    android:layout_marginTop="8dp"
+    android:layout_marginTop="6dp"
     android:layout_marginEnd="5dp"
     android:background="?attr/selectableItemBackground"
     android:clickable="true"
@@ -15,7 +15,9 @@
     <FrameLayout
         android:id="@+id/boxCover"
         android:layout_width="match_parent"
-        android:layout_height="102dp">
+        android:layout_height="102dp"
+        android:background="@drawable/bg_cover_frame"
+        android:padding="3dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivCover"
@@ -29,16 +31,17 @@
         <TextView
             android:id="@+id/tvDuration"
             android:layout_width="wrap_content"
-            android:layout_height="17dp"
+            android:layout_height="18dp"
             android:layout_gravity="bottom|end"
-            android:layout_margin="5dp"
+            android:layout_margin="6dp"
             android:background="@drawable/bg_duration"
+            android:fontFamily="monospace"
             android:gravity="center"
+            android:letterSpacing="0.04"
             android:paddingStart="5dp"
             android:paddingEnd="5dp"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/onBadge"
             android:textSize="9sp"
-            android:textStyle="bold"
             android:visibility="gone" />
     </FrameLayout>
 
@@ -48,20 +51,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ellipsize="end"
+        android:fontFamily="serif"
         android:lineSpacingExtra="1dp"
         android:maxLines="2"
         android:minLines="2"
         android:textColor="@color/textMain"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tvMeta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
         android:ellipsize="end"
+        android:fontFamily="sans-serif"
         android:maxLines="1"
         android:textColor="@color/textSecondary"
         android:textSize="11sp" />

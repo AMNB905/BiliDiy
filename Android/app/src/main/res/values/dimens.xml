@@ -9,18 +9,19 @@
     <dimen name="space_7">28dp</dimen>
     <dimen name="space_8">32dp</dimen>
 
-    <dimen name="page_margin">16dp</dimen>
-    <dimen name="radius_xs">8dp</dimen>
-    <dimen name="radius_sm">12dp</dimen>
-    <dimen name="radius_md">16dp</dimen>
-    <dimen name="radius_lg">20dp</dimen>
-    <dimen name="radius_xl">28dp</dimen>
-    <dimen name="radius_pill">999dp</dimen>
+    <dimen name="page_margin">18dp</dimen>
+    <dimen name="radius_xs">2dp</dimen>
+    <dimen name="radius_sm">2dp</dimen>
+    <dimen name="radius_md">2dp</dimen>
+    <dimen name="radius_lg">4dp</dimen>
+    <dimen name="radius_xl">4dp</dimen>
+    <dimen name="radius_pill">2dp</dimen>
 
     <dimen name="touch_target">48dp</dimen>
     <dimen name="icon_button">44dp</dimen>
     <dimen name="card_stroke">1dp</dimen>
+    <dimen name="rule_width">1dp</dimen>
     <dimen name="bottom_nav_height">64dp</dimen>
     <dimen name="top_bar_height">56dp</dimen>
-    <dimen name="search_height">52dp</dimen>
+    <dimen name="search_height">48dp</dimen>
 </resources>

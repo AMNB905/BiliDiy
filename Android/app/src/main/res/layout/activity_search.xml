@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/bg"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="12dp">
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="8dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBack"
@@ -28,22 +28,22 @@
         <LinearLayout
             android:id="@+id/searchBox"
             android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="4dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="2dp"
             android:layout_weight="1"
             android:background="@drawable/bg_search"
             android:clipToOutline="true"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingStart="14dp"
-            android:paddingEnd="4dp">
+            android:paddingStart="12dp"
+            android:paddingEnd="0dp">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:contentDescription="@null"
                 android:src="@drawable/ic_search"
-                app:tint="@color/textSecondary" />
+                app:tint="@color/textMain" />
 
             <EditText
                 android:id="@+id/etSearch"
@@ -51,38 +51,23 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@null"
+                android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
                 android:hint="@string/search_hint"
                 android:imeOptions="actionSearch"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:maxLines="1"
-                android:paddingStart="10dp"
+                android:paddingStart="9dp"
                 android:paddingEnd="4dp"
                 android:textColor="@color/textMain"
                 android:textColorHint="@color/textSecondary"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/btnKindFilter"
-                android:layout_width="wrap_content"
-                android:layout_height="32dp"
-                android:layout_marginEnd="2dp"
-                android:background="@drawable/bg_chip"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:paddingStart="9dp"
-                android:paddingEnd="9dp"
-                android:text="视频 ▾"
-                android:textColor="@color/pinkDeep"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/btnClear"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="36dp"
+                android:layout_height="48dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="清空"
                 android:gravity="center"
@@ -90,21 +75,42 @@
                 android:textColor="@color/textSecondary"
                 android:textSize="12sp"
                 android:visibility="gone" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSearch"
-                style="@style/Widget.BiliDiy.IconButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="2dp"
-                android:contentDescription="@string/search"
-                app:icon="@drawable/ic_search"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconSize="18dp" />
         </LinearLayout>
-    </LinearLayout>
 
+        <TextView
+            android:id="@+id/btnKindFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_chip"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:minWidth="56dp"
+            android:paddingStart="9dp"
+            android:paddingEnd="9dp"
+            android:text="视频 ▾"
+            android:textColor="@color/pinkDeep"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSearch"
+            style="@style/Widget.BiliDiy.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:contentDescription="@string/search"
+            app:icon="@drawable/ic_search"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconSize="18dp" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_rule_double" />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -131,7 +137,7 @@
                     style="@style/Widget.BiliDiy.Card"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="16dp">
+                    app:cardCornerRadius="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -189,7 +195,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    app:cardCornerRadius="16dp">
+                    app:cardCornerRadius="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -239,7 +245,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    app:cardCornerRadius="16dp">
+                    app:cardCornerRadius="2dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"

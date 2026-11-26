@@ -60,6 +60,10 @@
             android:textSize="12sp" />
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_rule_double" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -80,7 +84,7 @@
                 style="@style/Widget.BiliDiy.Card.Tonal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="28dp">
+                app:cardCornerRadius="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"

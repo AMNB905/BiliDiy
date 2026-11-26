@@ -3,33 +3,38 @@
     <style name="TextAppearance.BiliDiy" parent="" />
     <style name="Widget.BiliDiy" parent="" />
 
-    <!-- Type scale：系统字 + 层级，不靠字体炫技 -->
+    <!-- 三个声音：宋体标题 / 黑体正文 / 等宽数字 -->
     <style name="TextAppearance.BiliDiy.Display">
-        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textSize">34sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/textMain</item>
         <item name="android:letterSpacing">-0.02</item>
-        <item name="android:lineSpacingMultiplier">1.15</item>
+        <item name="android:lineSpacingMultiplier">1.08</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="TextAppearance.BiliDiy.Headline">
-        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textSize">26sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/textMain</item>
-        <item name="android:letterSpacing">-0.01</item>
+        <item name="android:letterSpacing">-0.02</item>
         <item name="android:lineSpacingMultiplier">1.1</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="TextAppearance.BiliDiy.TitleLarge">
+        <item name="android:fontFamily">serif</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/textMain</item>
+        <item name="android:letterSpacing">-0.01</item>
         <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="TextAppearance.BiliDiy.Title">
+        <item name="android:fontFamily">serif</item>
         <item name="android:textSize">17sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/textMain</item>
@@ -37,55 +42,67 @@
     </style>
 
     <style name="TextAppearance.BiliDiy.Body">
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/textMain</item>
-        <item name="android:lineSpacingMultiplier">1.2</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
     </style>
 
     <style name="TextAppearance.BiliDiy.BodySmall">
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/textSecondary</item>
-        <item name="android:lineSpacingMultiplier">1.15</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
 
     <style name="TextAppearance.BiliDiy.Label">
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/textSecondary</item>
+        <item name="android:letterSpacing">0.04</item>
+    </style>
+
+    <!-- 只在时长、集数、时间码上使用 -->
+    <style name="TextAppearance.BiliDiy.Meta">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textSize">11sp</item>
         <item name="android:textColor">@color/textSecondary</item>
         <item name="android:letterSpacing">0.02</item>
     </style>
 
     <style name="TextAppearance.BiliDiy.Overline">
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">11sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/onPrimaryContainer</item>
         <item name="android:letterSpacing">0.1</item>
     </style>
 
-    <!-- Shape overlays -->
+    <!-- Shape overlays：印刷裁切边，只有 2dp -->
     <style name="RoundedCover">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">12dp</item>
+        <item name="cornerSize">2dp</item>
     </style>
 
     <style name="RoundedCoverSmall">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">10dp</item>
+        <item name="cornerSize">2dp</item>
     </style>
 
     <style name="RoundedPoster">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
+        <item name="cornerSize">2dp</item>
     </style>
 
     <style name="RoundedEp">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">12dp</item>
+        <item name="cornerSize">2dp</item>
     </style>
 
     <style name="RoundedHero">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">20dp</item>
+        <item name="cornerSize">2dp</item>
     </style>
 
     <style name="CircleShape">
@@ -93,10 +110,10 @@
         <item name="cornerSize">50%</item>
     </style>
 
-    <!-- Surfaces：一层卡片，靠 1dp 线与纸底分界，不做投影 -->
+    <!-- Surfaces：纸与线，没有投影 -->
     <style name="Widget.BiliDiy.Card">
         <item name="cardBackgroundColor">@color/surface</item>
-        <item name="cardCornerRadius">@dimen/radius_md</item>
+        <item name="cardCornerRadius">2dp</item>
         <item name="cardElevation">0dp</item>
         <item name="strokeWidth">@dimen/card_stroke</item>
         <item name="strokeColor">@color/line</item>
@@ -112,13 +129,14 @@
         <item name="cardBackgroundColor">@color/surfaceContainer</item>
     </style>
 
-    <!-- Buttons -->
+    <!-- Buttons：直角，不用胶囊 -->
     <style name="Widget.BiliDiy.Button" parent="Widget.Material3.Button">
-        <item name="cornerRadius">@dimen/radius_pill</item>
+        <item name="cornerRadius">2dp</item>
         <item name="android:minHeight">@dimen/touch_target</item>
         <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:letterSpacing">0</item>
+        <item name="android:letterSpacing">0.01</item>
         <item name="android:textColor">@color/onPrimary</item>
         <item name="backgroundTint">@color/primary</item>
     </style>
@@ -134,7 +152,7 @@
         <item name="android:textColor">@color/textMain</item>
         <item name="backgroundTint">@color/surface</item>
         <item name="strokeWidth">1dp</item>
-        <item name="strokeColor">@color/line</item>
+        <item name="strokeColor">@color/textMain</item>
     </style>
 
     <style name="Widget.BiliDiy.Button.Text">
@@ -152,7 +170,7 @@
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
         <item name="android:padding">8dp</item>
-        <item name="cornerRadius">@dimen/radius_pill</item>
+        <item name="cornerRadius">2dp</item>
         <item name="backgroundTint">@color/surfaceContainer</item>
         <item name="iconTint">@color/textMain</item>
         <item name="iconGravity">textStart</item>
@@ -165,16 +183,32 @@
         <item name="iconTint">@color/textMain</item>
     </style>
 
+    <!-- 方角：FAB / 导航选中指示器 -->
+    <style name="ShapeAppearance.BiliDiy.Square" parent="ShapeAppearance.Material3.Corner.None">
+        <item name="cornerSize">2dp</item>
+    </style>
+
+    <style name="Widget.BiliDiy.NavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/primaryContainer</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.BiliDiy.NavIndicator</item>
+    </style>
+
+    <style name="ShapeAppearance.BiliDiy.NavIndicator" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">2dp</item>
+    </style>
+
     <style name="Widget.BiliDiy.TextField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxBackgroundColor">@color/surfaceContainer</item>
-        <item name="boxCornerRadiusTopStart">16dp</item>
-        <item name="boxCornerRadiusTopEnd">16dp</item>
-        <item name="boxCornerRadiusBottomStart">16dp</item>
-        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="boxCornerRadiusTopStart">2dp</item>
+        <item name="boxCornerRadiusTopEnd">2dp</item>
+        <item name="boxCornerRadiusBottomStart">2dp</item>
+        <item name="boxCornerRadiusBottomEnd">2dp</item>
         <item name="boxStrokeColor">@color/text_field_stroke</item>
         <item name="boxStrokeWidth">1dp</item>
-        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
         <item name="hintTextColor">@color/textSecondary</item>
         <item name="android:textColorHint">@color/textSecondary</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 </resources>

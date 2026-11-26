@@ -64,7 +64,7 @@
         android:layout_marginTop="16dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="2dp"
         app:rippleColor="@color/pinkLight">
 
         <LinearLayout
@@ -132,7 +132,7 @@
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="2dp"
         app:rippleColor="@color/pinkBorder">
 
         <LinearLayout
@@ -200,7 +200,7 @@
         android:layout_marginTop="10dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="2dp"
         app:rippleColor="@color/pinkLight">
 
         <LinearLayout

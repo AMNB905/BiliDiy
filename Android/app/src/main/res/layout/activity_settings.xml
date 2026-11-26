@@ -48,6 +48,10 @@
         </LinearLayout>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/bg_rule_double" />
     <ScrollView
         android:id="@+id/settingsScroll"
         android:layout_width="match_parent"
@@ -454,7 +458,7 @@
                 style="@style/Widget.BiliDiy.Card.Tonal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp">
+                app:cardCornerRadius="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -566,7 +570,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                app:cardCornerRadius="16dp">
+                app:cardCornerRadius="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -641,7 +645,7 @@
                 style="@style/Widget.BiliDiy.Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp">
+                app:cardCornerRadius="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"

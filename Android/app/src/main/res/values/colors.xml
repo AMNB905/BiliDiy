@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 粉墨 · 浅色（纸白 + 墨粉）。语义 token 在前，旧名做别名，避免布局大面积改名。 -->
-    <color name="bg">#FDF9F7</color>
-    <color name="surface">#FFFFFF</color>
-    <color name="surfaceContainer">#F6EFEC</color>
-    <color name="surfaceContainerHigh">#EFE5E1</color>
-    <color name="line">#E8DCD6</color>
-    <color name="textMain">#241F1D</color>
-    <color name="textSecondary">#6B5D58</color>
-    <color name="primary">#C0265C</color>
-    <color name="onPrimary">#FFFFFF</color>
-    <color name="primaryContainer">#FBE4EB</color>
-    <color name="onPrimaryContainer">#8A1A44</color>
+    <!-- 放映节目册 · 日场（纸 + 墨 + 深绯红）。语义 token 在前，旧名做别名，避免布局大面积改名。 -->
+    <color name="bg">#F5EFE3</color>
+    <color name="surface">#FCF7EE</color>
+    <color name="surfaceContainer">#E8DECD</color>
+    <color name="surfaceContainerHigh">#DCD0BC</color>
+    <color name="line">#B9A88F</color>
+    <color name="textMain">#17120D</color>
+    <color name="textSecondary">#574C3F</color>
+    <color name="primary">#9C1B3B</color>
+    <color name="onPrimary">#FFF8EE</color>
+    <color name="primaryContainer">#F5D6DD</color>
+    <color name="onPrimaryContainer">#6B0F27</color>
     <color name="brandDeco">#FB7299</color>
-    <color name="accent">#FFC53D</color>
-    <color name="ok">#2E7D48</color>
-    <color name="warn">#9A6B10</color>
-    <color name="bad">#C0392B</color>
+    <color name="accent">#8A5A00</color>
+    <color name="ok">#2E6B49</color>
+    <color name="warn">#8A5A00</color>
+    <color name="bad">#A2261D</color>
+    <color name="onBrandDeco">#17120D</color>
+    <color name="onBadge">#FFF8EE</color>
 
     <!-- 旧名兼容 -->
     <color name="pink">@color/primary</color>
     <color name="pinkDeep">@color/onPrimaryContainer</color>
     <color name="pinkLight">@color/primaryContainer</color>
-    <color name="pinkBorder">#E9C6D2</color>
+    <color name="pinkBorder">#C9AE94</color>
     <color name="onPink">@color/onPrimary</color>
     <color name="surfaceDeep">@color/surfaceContainer</color>
-    <color name="peach">#8A6A12</color>
+    <color name="peach">#8A5A00</color>
     <color name="online">@color/ok</color>
-    <color name="badge">#B3000000</color>
+    <color name="badge">#17120D</color>
     <color name="backScrim">#66000000</color>
 </resources>

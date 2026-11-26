@@ -24,69 +24,97 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/page_margin"
-                android:paddingTop="8dp"
+                android:paddingTop="12dp"
                 android:paddingEnd="@dimen/page_margin"
-                android:paddingBottom="10dp">
+                android:paddingBottom="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:baselineAligned="true"
+                    android:gravity="bottom"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/bg_logo_mark"
-                        android:contentDescription="BiliDiy"
-                        android:gravity="center"
-                        android:text="B"
-                        android:textColor="@color/onPrimary"
-                        android:textSize="17sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="serif"
+                        android:letterSpacing="-0.02"
+                        android:text="BILIDIY"
+                        android:textColor="@color/textMain"
+                        android:textSize="27sp"
                         android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@color/line" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:paddingBottom="1dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="BiliDiy"
-                            android:textAppearance="@style/TextAppearance.BiliDiy.TitleLarge" />
+                            android:fontFamily="sans-serif"
+                            android:letterSpacing="0.12"
+                            android:text="放映节目册"
+                            android:textColor="@color/textMain"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="1dp"
-                            android:text="把想看的，留在手边"
-                            android:textAppearance="@style/TextAppearance.BiliDiy.BodySmall" />
+                            android:layout_marginTop="2dp"
+                            android:fontFamily="sans-serif"
+                            android:text="选一部，坐下来看完。"
+                            android:textColor="@color/textSecondary"
+                            android:textSize="11sp" />
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:text="每晚更新"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="10sp" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_rule_double" />
 
                 <LinearLayout
                     android:id="@+id/searchBox"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/search_height"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="12dp"
                     android:background="@drawable/bg_search"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="6dp">
+                    android:paddingStart="14dp"
+                    android:paddingEnd="0dp">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
                         android:contentDescription="@null"
                         android:src="@drawable/ic_search"
-                        app:tint="@color/primary" />
+                        app:tint="@color/textMain" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -94,38 +122,44 @@
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
                         android:ellipsize="end"
+                        android:fontFamily="sans-serif"
                         android:gravity="center_vertical"
                         android:maxLines="1"
                         android:text="@string/search_hint"
                         android:textColor="@color/textSecondary"
-                        android:textSize="15sp" />
+                        android:textSize="14sp" />
 
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background="@drawable/bg_search_go"
-                        android:contentDescription="@string/search"
-                        android:padding="9dp"
-                        android:src="@drawable/ic_chevron_right"
-                        app:tint="@color/onPrimary" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:letterSpacing="0.06"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="14dp"
+                        android:text="搜索"
+                        android:textColor="@color/primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvAnnounce"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/bg_announce"
                     android:drawableStart="@drawable/ic_campaign"
                     android:drawablePadding="8dp"
-                    android:drawableTint="@color/onPrimaryContainer"
+                    android:drawableTint="@color/onBrandDeco"
                     android:ellipsize="end"
+                    android:fontFamily="sans-serif"
                     android:maxLines="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="9dp"
-                    android:paddingEnd="12dp"
-                    android:paddingBottom="9dp"
-                    android:textColor="@color/onPrimaryContainer"
+                    android:paddingStart="10dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="@color/onBrandDeco"
                     android:textSize="12sp"
                     android:visibility="gone" />
             </LinearLayout>
@@ -151,9 +185,9 @@
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
                 android:overScrollMode="never"
-                android:paddingStart="10dp"
-                android:paddingTop="6dp"
-                android:paddingEnd="10dp"
+                android:paddingStart="13dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="13dp"
                 android:paddingBottom="16dp" />
 
             <TextView
@@ -161,6 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:lineSpacingExtra="4dp"
                 android:paddingStart="36dp"
@@ -178,11 +213,12 @@
                 android:layout_marginBottom="16dp"
                 android:contentDescription="回到顶部"
                 android:visibility="gone"
-                app:backgroundTint="@color/primaryContainer"
+                app:backgroundTint="@color/primary"
                 app:elevation="0dp"
                 app:fabSize="mini"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.BiliDiy.Square"
                 app:srcCompat="@drawable/ic_arrow_up"
-                app:tint="@color/onPrimaryContainer" />
+                app:tint="@color/onPrimary" />
         </FrameLayout>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -191,6 +227,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_nav_bar"
             android:minHeight="@dimen/bottom_nav_height"
+            app:itemActiveIndicatorStyle="@style/Widget.BiliDiy.NavIndicator"
             app:itemIconSize="24dp"
             app:itemIconTint="@color/nav_item_tint"
             app:itemRippleColor="@color/primaryContainer"

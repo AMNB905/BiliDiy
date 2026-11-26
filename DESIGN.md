@@ -1,98 +1,96 @@
-# Design
+# DESIGN.md — 放映节目册（The Program）
 
-<!-- impeccable:design-schema 1 -->
-
-**World:** 粉墨（Pink Ink）— 品牌粉只当墨用，纸白做底，封面当插图；没有光斑，没有渐变，没有浮岛。
-**Mode:** Operate（用户是来完成一件事的：找到、播放、留住）。
-**Platform:** android（Material 3 管结构与交互，品牌只从色彩、字体层级、形状三处进入）。
+> 取代上一版「粉墨（Pink Ink）」。这次不是换皮，是换一个世界：把 App 当成每晚印一版的影展节目册。
 
 ## Thesis
 
-现有 3.9.39 是「浅色 + 粉色光斑 + 悬浮岛底栏」的拼装感：装饰比内容响。
-重做成一本印刷物：纸底、黑字、一支粉墨；封面图是唯一的大色块，界面其余部分退到灰阶。
-Android 用户熟悉的 M3 组件全部保留（导航栏、顶栏、卡片、chip、sheet），因为它们就是可用性。
+- **一句话**：纸、墨、一枚深绯红。App 是一册放映节目，视频是场次，封面是唯一的图像，排版承担全部表现力。
+- **为什么是它**：BiliDiy 的核心动作是「挑一部、看一部」。节目册正是为「挑」而生的物件——目录、片目、场次、时长，一页读完。它把界面从「卡片流」拉回「印刷品」，也让品牌粉退到一枚印章的位置。
+- **来源**：影院节目单、影展场刊、旧报纸的电影版、Criterion 的碟封目录。不是复古滤镜，是印刷品的结构：栏线、字号跳跃、留白。
+- **反面（明确不做）**：渐变 masthead、光斑、玻璃模糊、圆角卡片海、图标+标题+副文的等大卡片、把粉色铺满屏幕。
 
 ## Color
 
-色彩角色，不写裸 hex 到布局里。浅色 / 深色两套同名 token（`values/colors.xml`、`values-night/colors.xml`）。
+印刷逻辑：纸是底，墨是字，绯红是批注，B 站粉只做「印章块」。
 
-| Token | Light | Dark | 用途 |
+### 浅色 · 日场
+
+| 角色 | 值 | 用途 | 对比度 |
 |---|---|---|---|
-| `bg` | `#FDF9F7` | `#141110` | 页面底（暖纸 / 深墨） |
-| `surface` | `#FFFFFF` | `#1B1715` | 卡片、栏底 |
-| `surfaceContainer` | `#F6EFEC` | `#231E1B` | 搜索框、chip、输入区 |
-| `surfaceContainerHigh` | `#EFE5E1` | `#2C2622` | 选中底、按下底 |
-| `line` | `#E8DCD6` | `#3A322E` | 1dp 分隔线与描边 |
-| `textMain` | `#241F1D` | `#F2EAE5` | 标题、正文 |
-| `textSecondary` | `#6B5D58` | `#B4A49C` | 副标题、元信息 |
-| `primary` | `#C0265C` | `#FF8FAE` | 唯一的强调色：选中、链接、进度、主按钮底 |
-| `onPrimary` | `#FFFFFF` | `#3A0A1C` | 主色上的字 |
-| `primaryContainer` | `#FBE4EB` | `#4A2030` | 选中 chip 底、导航指示器 |
-| `onPrimaryContainer` | `#8A1A44` | `#FFD9E3` | 容器上的字 |
-| `brandDeco` | `#FB7299` | `#FB7299` | 只做填充与图形，绝不用于文字 |
-| `accent` | `#FFC53D` | `#FFC53D` | 弹幕黄，只用于「直播 / 热门」小角标，配深色字 |
-| `ok` / `warn` / `bad` | `#2E7D48` / `#9A6B10` / `#C0392B` | 同左提亮版 | 状态，仅用于图标与短标签 |
+| `bg` | `#F5EFE3` | 纸底 | — |
+| `surface` | `#FCF7EE` | 稍亮的纸（输入框、面板） | — |
+| `surfaceContainer` | `#E8DECD` | 次级纸（chip、分区） | — |
+| `surfaceContainerHigh` | `#DCD0BC` | 更深的纸 | — |
+| `line` | `#B9A88F` | 1dp 栏线 | 装饰用 |
+| `textMain` | `#17120D` | 墨、标题、正文 | 16.2:1 on bg |
+| `textSecondary` | `#574C3F` | 场次信息、副文 | 7.3:1 |
+| `primary` | `#9C1B3B` | 深绯红：动作、选中 | 6.96:1 |
+| `onPrimary` | `#FFF8EE` | 绯红上的字 | 7.56:1 |
+| `primaryContainer` | `#F5D6DD` | 淡绯红批注底 | 墨字 12.7:1 |
+| `onPrimaryContainer` | `#6B0F27` | 批注字 | 9.4:1 |
+| `brandDeco` | `#FB7299` | 印章块（公告条、精选标记），只做底 | 墨字 7.06:1 |
+| `accent` | `#8A5A00` | 会员/评分等次强调 | 5.6:1 |
+| `ok` / `warn` / `bad` | `#2E6B49` / `#8A5A00` / `#A2261D` | 状态 | ≥5:1 |
 
-实测对比度（浅色）：primary on surface 5.72、textSecondary on bg 6.02、textMain on bg 15.57；
-深色：primary on bg 8.76、textSecondary on bg 7.81。`brandDeco` 只有 2.64，所以它不是文字色。
+### 深色 · 夜场
+
+| 角色 | 值 | 对比度 |
+|---|---|---|
+| `bg` | `#14100C` | — |
+| `surface` | `#1C1712` | — |
+| `surfaceContainer` | `#241D17` | — |
+| `surfaceContainerHigh` | `#2E261F` | — |
+| `line` | `#40372D` | 装饰用 |
+| `textMain` | `#F1E6D3` | 15.3:1 |
+| `textSecondary` | `#B7A794` | 8.1:1 |
+| `primary` | `#FF9CB2` | 9.6:1 |
+| `onPrimary` | `#3A0712` | 8.74:1 |
+| `primaryContainer` | `#4A1B27` | — |
+| `onPrimaryContainer` | `#FFD6DE` | 10.9:1 |
 
 ## Type
 
-系统字（Android 上就是 Roboto + 设备中文字体），靠层级和字重说话，不引入第三方字体。
+三个声音，各有分工：
 
-| Role | Size / Line | Weight | Tracking |
-|---|---|---|---|
-| Display | 30 / 38 | 700 | -0.02em |
-| Headline | 24 / 31 | 700 | -0.01em |
-| TitleLarge | 20 / 26 | 600 | 0 |
-| Title | 17 / 23 | 600 | 0 |
-| Body | 15 / 22 | 400 | 0 |
-| BodySmall | 13 / 19 | 400 | 0 |
-| Label | 12 / 16 | 500 | +0.02em |
+- **宋（serif）**：Display 34 / Headline 26 / Title 20 / 条目题 16。用于刊头、分区标题、视频标题。系统 `serif` → Noto Serif CJK（思源宋体），不额外打包字库。
+- **黑（sans）**：Body 15 / BodySmall 13 / Label 12。场次信息、说明、按钮、导航。
+- **等宽（mono）**：只给时长、集数、时间码这类真正的数字，11sp。不当装饰用。
 
-规则：一行正文只承担一件事；标题最多两行；时间、时长、集数用等宽数字（`tnum`）。
+行距 1.15–1.25；标题字距 -0.02em；数字统一 tnum。
 
 ## Shape & elevation
 
-- 圆角：封面 12、卡片 16、面板 20、底栏/搜索 28（顶部）、chip 与按钮 999。
-- 不做投影：层级用「纸白 surface + 1dp line」表达；底栏只用一条上边线。
-- 卡片只有一层：列表项不再套 MaterialCardView 里再放一层卡片。
+- 圆角只有两档：**2dp**（印刷品的裁切边）、**0**（栏线、印章块、输入框）。不用胶囊、不用 16dp 卡片。
+- **零投影**。层级只靠纸色深浅与 1dp 栏线，不靠阴影。
+- 图像一律 2dp 直角边，外加 1dp 墨线框。
 
 ## Components
 
-- **顶栏**：56dp，纸底，左品牌标记 + 标题（TitleLarge），右侧一个图标动作；滚动时不换成大标题（单页只有一个头）。
-- **搜索**：52dp 胶囊，`surfaceContainer` 填充，无投影；聚焦时 2dp `primary` 描边；类型切换在框内尾部。
-- **底栏**：M3 `NavigationBar` 80dp，`surface` 底 + 顶部 1dp `line`，四项（首页 / 功能 / 本地 / 我的），选中项是 `primaryContainer` 指示器 + `primary` 图标与文字。不再用悬浮岛。
-- **视频卡**：封面 12 圆角（16:9），右下时长角标（4dp 圆角、`#000000B3` 底、白字 11sp），标题 2 行 Title，元信息 1 行 BodySmall；列表直接用纸底，不画外框。
-- **Chip**：36dp 高，`surfaceContainer` 底；选中 `primaryContainer` + `onPrimaryContainer` 字。
-- **按钮**：Filled（`primary` 底、`onPrimary` 字、48dp、胶囊）；Tonal（`primaryContainer`）；Text（`textSecondary`，动作动词开头）。
-- **Sheet**：顶部 28 圆角，纸白，只有一个抓手。
-- **空态 / 错误**：两行封顶——第一行说发生了什么，第二行说怎么办，最多一个按钮。
+- **刊头 Masthead**：BILIDIY 宋体 26 + 右侧「放映节目册 / 每晚更新」小字；下方一条双栏线（1dp + 1dp）。
+- **搜索**：48dp 方框，1dp 墨线，左放大镜，右「搜索」绯红字。不是胶囊。
+- **公告**：B 站粉印章块，墨字，通栏，无圆角。
+- **节目条目**：16:9 封面（1dp 墨框）+ 宋体标题两行 + 黑体场次信息 + 等宽时长块（墨底纸字，压在封面右下）。
+- **分区标题**：宋体 22，副文一行，下面一条栏线；没有眉标、没有编号。
+- **底栏**：标准 M3 NavigationBar，纸底，上方双栏线；选中项绯红，其余墨灰。
+- **按钮**：2dp 直角，主按钮深绯红；次按钮描边；不用胶囊。
+- **弹层/Sheet**：纸面、2dp、顶部一条墨线；不用玻璃。
 
 ## Motion
 
-- 时长：进入 200ms、退出 160ms，`FastOutSlowIn`。
-- 页面切换：内容淡入 + 8dp 上移；返回反向。
-- 卡片按下用 Material ripple（`primaryContainer` 20%），不做缩放把戏。
-- 唯一编排过的时刻：进入播放页时，封面 240ms 交叉淡入到视频首帧，避免黑屏闪一下。
-- 系统开启「移除动画」时全部退化为直切。
+- 只保留一个编排过的时刻：首页刊头首帧 360ms 自上落入一次，之后不再动。
+- 其余：按压 pressScale 0.97、页面切换淡入；不做呼吸光、不做循环动画、不做滚动视差。
+- 系统「移除动画」时全部直切。
 
 ## Don't
 
-- 不要径向光斑、渐变 masthead、玻璃模糊——它们是装饰，不是层级。
-- 不要浮岛式底栏、卡片套卡片、满屏粉色底。
-- 不要把 `brandDeco` / `#FB7299` 当文字色。
-- 不要为了「显得设计过」加眉标（kicker）、编号（01/02）、渐变文字。
+- 不要眉标（kicker）、分区编号（01/02）、渐变文字。
+- 不要硬偏移投影（本世界不是 neobrutalism），不要玻璃/模糊装饰。
+- 不要把等宽字当「科技感」用。
+- 不要把圆角卡片堆成页面结构；列表用栏线与留白分隔。
+- 不要用 brandDeco 当文字色。
 
 ## Verification
 
-- 构建：`gradle :app:assembleDebug`（JDK 17 + SDK 35）。本次无可用的模拟器/真机，截图验证缺席，已如实记录。
-- 深色：`values-night/colors.xml` 与主题同名替换；切换系统深色即生效。
-- 对比度：见上表，均 ≥ 4.5:1（大字 ≥ 3:1）。
-
-## Implementation status
-
-- 已落地：语义色 + 深色同名覆盖、字号层级、16dp 卡片/12dp 封面、标准 M3 底栏、首页顶栏、列表行、搜索页、设置页、好友页、番剧页、启动页；`MainActivity` 已移除浮岛与光呼吸。
-- 构建：`gradle :app:assembleDebug` 通过（Gradle 8.13 + JDK 17 + SDK 35，`app-debug.apk` 约 9.7MB）。
-- 已知缺口：没有真机/模拟器，无法提供 `adb exec-out screencap` 截图；深色与动效需要在设备上再过一眼。
-- Maven 源：`settings.gradle.kts` 增加阿里云镜像（本机访问 Maven Central 超时）。
+- 对比度实测见上表（正文/副文/主色均 ≥4.5:1）。
+- 构建：gradle :app:assembleRelease（JDK 17 + SDK 35 + Gradle 8.13）。
+- 本次仍无真机/模拟器，adb 截图验证缺席，已如实记录；深色与字体缩放需在设备上复核。

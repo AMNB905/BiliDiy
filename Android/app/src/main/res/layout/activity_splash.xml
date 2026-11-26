@@ -14,49 +14,66 @@
         android:paddingStart="32dp"
         android:paddingEnd="32dp">
 
-        <FrameLayout
+        <TextView
             android:id="@+id/splashLogo"
-            android:layout_width="92dp"
-            android:layout_height="92dp"
-            android:background="@drawable/bg_splash_logo"
-            android:elevation="2dp">
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/bg_logo_mark"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="B"
+            android:textColor="@color/onPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                android:layout_gravity="center"
-                android:contentDescription="@null"
-                android:src="@mipmap/splash_avatar" />
-        </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.18"
+            android:text="放映节目册"
+            android:textColor="@color/textSecondary"
+            android:textSize="11sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/splashTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:letterSpacing="0.01"
-            android:text="BiliDiy"
+            android:layout_marginTop="6dp"
+            android:fontFamily="serif"
+            android:letterSpacing="-0.02"
+            android:text="BILIDIY"
             android:textColor="@color/textMain"
-            android:textSize="28sp"
+            android:textSize="38sp"
             android:textStyle="bold" />
+
+        <View
+            android:layout_width="168dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_rule_double" />
 
         <TextView
             android:id="@+id/splashTagline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
             android:text="@string/splash_tagline"
             android:textColor="@color/textSecondary"
-            android:textSize="12sp" />
+            android:textSize="13sp" />
 
         <ProgressBar
             android:id="@+id/splashProgress"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="128dp"
-            android:layout_height="3dp"
+            android:layout_width="120dp"
+            android:layout_height="2dp"
             android:layout_marginTop="30dp"
             android:indeterminate="true"
-            android:indeterminateTint="@color/pink" />
+            android:indeterminateTint="@color/primary" />
     </LinearLayout>
 
     <TextView
@@ -65,8 +82,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="42dp"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.08"
         android:text="@string/splash_footer"
         android:textColor="@color/textSecondary"
         android:textSize="10sp" />
 </FrameLayout>
-

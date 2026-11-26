@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 粉墨 · 深色（深墨纸 + 亮粉）。同名 token 覆盖浅色，布局无需改。 -->
-    <color name="bg">#141110</color>
-    <color name="surface">#1B1715</color>
-    <color name="surfaceContainer">#231E1B</color>
-    <color name="surfaceContainerHigh">#2C2622</color>
-    <color name="line">#3A322E</color>
-    <color name="textMain">#F2EAE5</color>
-    <color name="textSecondary">#B4A49C</color>
-    <color name="primary">#FF8FAE</color>
-    <color name="onPrimary">#3A0A1C</color>
-    <color name="primaryContainer">#4A2030</color>
-    <color name="onPrimaryContainer">#FFD9E3</color>
+    <!-- 放映节目册 · 夜场（深墨纸 + 亮绯红）。同名 token 覆盖浅色，布局无需改。 -->
+    <color name="bg">#14100C</color>
+    <color name="surface">#1C1712</color>
+    <color name="surfaceContainer">#241D17</color>
+    <color name="surfaceContainerHigh">#2E261F</color>
+    <color name="line">#40372D</color>
+    <color name="textMain">#F1E6D3</color>
+    <color name="textSecondary">#B7A794</color>
+    <color name="primary">#FF9CB2</color>
+    <color name="onPrimary">#3A0712</color>
+    <color name="primaryContainer">#4A1B27</color>
+    <color name="onPrimaryContainer">#FFD6DE</color>
     <color name="brandDeco">#FB7299</color>
-    <color name="accent">#FFC53D</color>
+    <color name="accent">#E0B45C</color>
     <color name="ok">#6FCF97</color>
     <color name="warn">#E0B45C</color>
     <color name="bad">#FF8A80</color>
+    <color name="onBrandDeco">#17120D</color>
+    <color name="onBadge">#FFF8EE</color>
 
     <color name="pink">@color/primary</color>
     <color name="pinkDeep">@color/onPrimaryContainer</color>
     <color name="pinkLight">@color/primaryContainer</color>
-    <color name="pinkBorder">#5A3A46</color>
+    <color name="pinkBorder">#5A4636</color>
     <color name="onPink">@color/onPrimary</color>
     <color name="surfaceDeep">@color/surfaceContainer</color>
     <color name="peach">#E0B45C</color>
     <color name="online">@color/ok</color>
-    <color name="badge">#CC000000</color>
+    <color name="badge">#14100C</color>
     <color name="backScrim">#99000000</color>
 </resources>

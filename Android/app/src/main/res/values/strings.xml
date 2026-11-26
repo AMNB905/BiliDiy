@@ -2,16 +2,16 @@
 <resources>
     <string name="app_name">BiliDiy</string>
     <string name="app_subtitle">搜索 · 播放 · 弹幕</string>
-    <string name="search_hint">搜视频、番剧或影视</string>
+    <string name="search_hint">片名 / UP 主 / BV 号</string>
     <string name="search">搜一下</string>
     <string name="kind_video">视频</string>
     <string name="kind_bangumi">番剧</string>
     <string name="kind_movie">影视</string>
     <string name="back">返回</string>
-    <string name="splash_tagline">搜索 · 播放 · 弹幕</string>
-    <string name="splash_tagline_guest">搜索 · 播放 · 登录后同步观看记录</string>
-    <string name="splash_footer">BiliDiy · 只为更舒服地看视频</string>
-    <string name="splash_footer_version">BiliDiy %1$s · 只为更舒服地看视频</string>
+    <string name="splash_tagline">挑一部，坐下来看完。</string>
+    <string name="splash_tagline_guest">挑一部，登录后记住场次。</string>
+    <string name="splash_footer">BILIDIY · 放映节目册</string>
+    <string name="splash_footer_version">BILIDIY %1$s · 放映节目册</string>
 
     <string name="home_title_popular">热门推荐</string>
     <string name="home_title_prompt">输入关键词搜索%1$s</string>

@@ -11,8 +11,8 @@ android {
         applicationId = "com.gdk.biliapp"
         minSdk = 26
         targetSdk = 35
-        versionCode = 76
-        versionName = "3.9.42"
+        versionCode = 77
+        versionName = "3.9.43"
     }
 
     buildTypes {

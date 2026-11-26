@@ -250,10 +250,10 @@ class MainActivity : BaseActivity() {
             )
             val ime = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom
             headerContent.setPadding(
-                Ui.dp(this, 16),
-                Ui.dp(this, 8) + bars.top,
-                Ui.dp(this, 16),
-                Ui.dp(this, 10)
+                Ui.dp(this, 18),
+                Ui.dp(this, 12) + bars.top,
+                Ui.dp(this, 18),
+                0
             )
             bottomNav.setPadding(0, 0, 0, if (ime > 0) ime else bars.bottom)
             insets
