@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- App 内更新下载的 APK 放这里，只给系统安装器临时读取权限 -->
+    <cache-path name="updates_cache" path="updates/" />
+    <files-path name="updates" path="updates/" />
+    <external-files-path name="updates_external" path="Download/" />
+</paths>

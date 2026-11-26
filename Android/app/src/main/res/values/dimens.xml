@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_1">4dp</dimen>
+    <dimen name="space_2">8dp</dimen>
+    <dimen name="space_3">12dp</dimen>
+    <dimen name="space_4">16dp</dimen>
+    <dimen name="space_5">20dp</dimen>
+    <dimen name="space_6">24dp</dimen>
+    <dimen name="space_7">28dp</dimen>
+    <dimen name="space_8">32dp</dimen>
+
+    <dimen name="page_margin">16dp</dimen>
+    <dimen name="radius_xs">8dp</dimen>
+    <dimen name="radius_sm">12dp</dimen>
+    <dimen name="radius_md">16dp</dimen>
+    <dimen name="radius_lg">20dp</dimen>
+    <dimen name="radius_xl">24dp</dimen>
+    <dimen name="radius_pill">999dp</dimen>
+
+    <dimen name="touch_target">48dp</dimen>
+    <dimen name="icon_button">40dp</dimen>
+    <dimen name="card_stroke">1dp</dimen>
+    <dimen name="bottom_nav_height">80dp</dimen>
+</resources>

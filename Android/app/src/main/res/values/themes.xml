@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BiliDiy" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorOnPrimary">@color/onPink</item>
+        <item name="colorPrimaryContainer">@color/pinkLight</item>
+        <item name="colorOnPrimaryContainer">@color/pinkDeep</item>
+
+        <item name="colorSecondary">@color/peach</item>
+        <item name="colorOnSecondary">@color/onPink</item>
+        <item name="colorSecondaryContainer">@color/surfaceDeep</item>
+        <item name="colorOnSecondaryContainer">@color/textMain</item>
+        <item name="colorTertiary">@color/online</item>
+        <item name="colorOnTertiary">@color/onPink</item>
+
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/textMain</item>
+        <item name="colorSurfaceVariant">@color/surfaceDeep</item>
+        <item name="colorOnSurfaceVariant">@color/textSecondary</item>
+        <item name="colorSurfaceContainer">@color/surfaceContainer</item>
+        <item name="colorSurfaceContainerHigh">@color/surfaceContainerHigh</item>
+        <item name="colorOutline">@color/line</item>
+        <item name="colorOutlineVariant">@color/line</item>
+        <item name="colorError">@color/bad</item>
+        <item name="colorOnError">@color/onPink</item>
+
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog</item>
+        <item name="alertDialogTheme">@style/ThemeOverlay.Material3.MaterialAlertDialog</item>
+    </style>
+
+    <style name="Theme.BiliDiy.Splash" parent="Theme.BiliDiy">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

@@ -1,0 +1,11 @@
+BiliDiy 后端部署必读
+
+1. PHP 7.4+，上传 api.php、admin.php、lib/、u_f4ff6904bfb5.php。
+2. 复制 data/config.example.php 为 data/config.php。
+3. 生成随机 setup_token 填入 config.php，浏览器打开 admin.php，用它初始化管理员密码。
+4. 初始化完成后 setup_token 自动失效；不要复用其他站点密码。
+5. 将 data/config.php 中的 client_key 改成自己的值，并同步修改 Android/Windows 客户端。
+6. 登录后台后，在“云端 Cookie”粘贴完整 B 站 Cookie；保存后客户端重新打开生效。
+7. 把 u_f4ff6904bfb5.php 中的 DEPLOY_TOKEN 换成自己的 32 字节以上随机值。
+8. data/ 必须可写，且必须禁止外部直接访问；Apache 用 data/.htaccess，Nginx 用 deny 规则。
+9. 不要上传生产 data/、download/、签名密钥或部署 Token 到公开仓库。
